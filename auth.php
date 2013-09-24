@@ -1,7 +1,5 @@
 <?php
 include('conf.php');
-    // Base URL
-    $baseUrl = 'http://api.fitbit.com';
     
     // Request token path
     $req_url = $baseUrl . '/oauth/request_token';
