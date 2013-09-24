@@ -57,3 +57,10 @@ ToDo
 
 I'd like to explore the subscription api where you pass a endpoint to
 the fitbit api and it sends you data whenever your device syncs
+
+Contact
+=======
+
+You can drop me a line at robin {@} kearney.co.uk or [rk295](http://twitter.com/rk295/) 
+on Twitter. And I'll occasionally blog about this at http://riviera.org.uk
+
