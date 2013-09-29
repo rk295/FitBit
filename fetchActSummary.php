@@ -50,7 +50,7 @@ try {
 $json = $oauth->getLastResponse();
 
 
-$fileName = $backupDir.'/'.$dayToFetch.'.json';
+$fileName = $backupDir.'/'.$dayToFetch.'-summary.json';
 $log->log("Saving to $fileName", PEAR_LOG_DEBUG);
 
 if ( file_put_contents($fileName, $json) == false ) {
