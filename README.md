@@ -51,6 +51,25 @@ Set some vars in here, your keys, the dir to write to and a log file
 if you want to read some of the log data. Its not that interesting 
 but might help debugging
 
+read.php
+--------
+
+Reads all the files in the backupdir specified in conf.php and stores
+all the summary fields for each day in an array in memcache. Intended 
+to be called daily after fetchAct.php is run, the array it stores can
+be used by:
+
+get.php
+-------
+
+Grabs the array from memcache, (currently just _assumes_ it is there)
+and returns a json array of timestamp,steps. 
+
+Also takes a period parameter to specify only day in a given period, 
+i.e. 8d, 6m etc. 
+
+Currently /only/ supports steps, and has almost not error checking, 
+for example will die silently if the data isn't in memcache.
 
 ToDo
 ====
