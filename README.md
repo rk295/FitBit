@@ -68,7 +68,7 @@ and returns a json array of timestamp,steps.
 Also takes a period parameter to specify only day in a given period, 
 i.e. 8d, 6m etc. 
 
-Currently /only/ supports steps, and has almost not error checking, 
+Currently _only_ supports steps, and has almost not error checking, 
 for example will die silently if the data isn't in memcache.
 
 ToDo
