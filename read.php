@@ -30,7 +30,13 @@ if ($handle = opendir($backupDir)) {
 
         $date_str = preg_replace('/-summary.json/','',$entry);
 
-        $dt = new DateTime($date_str); 
+        try {
+            $dt = new DateTime($date_str); 
+        } catch (Exception $e) {
+            // Maybe ought to log this somewhere, but for now just continue.
+            //echo $e->getMessage();
+            continue;
+        }
         $timeStamp = $dt->format('U');
 
         $data = json_decode(file_get_contents($backupDir . "/" . $entry),true);
