@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Grab the last 21 days data
+
+for day in {1..21} ; do
+	datestr=$(date +%Y-%m-%d -d "$day days ago")
+	curl -s "http://trin.riviera.org.uk/~robin/fitbit/fetchActSummary.php?dayToFetch=$datestr&quiet"
+done
+
+# Now grab the lot and bung it in memcache
+curl -s "http://trin.riviera.org.uk/~robin/fitbit/read.php?quiet"
