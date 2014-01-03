@@ -31,6 +31,7 @@ Optional parameters:
 
 * debug - just supplying this will dump the json to the browser too
 * dayToFetch - supply a YYYY-MM-DD date to grab that days data
+* quiet - prints no output unless on error
 
 examples: 
 
@@ -57,7 +58,11 @@ read.php
 Reads all the files in the backupdir specified in conf.php and stores
 all the summary fields for each day in an array in memcache. Intended 
 to be called daily after fetchAct.php is run, the array it stores can
-be used by:
+be used by get.php
+
+Optional parameters:
+
+* quiet - prints no output unless on error
 
 get.php
 -------
@@ -70,6 +75,12 @@ i.e. 8d, 6m etc.
 
 Currently _only_ supports steps, and has almost not error checking, 
 for example will die silently if the data isn't in memcache.
+
+fetchFitBit
+-----------
+
+Shell script which grabs the last 21 days data and then calls read.php
+to put it all into memcache
 
 ToDo
 ====
