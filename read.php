@@ -20,6 +20,11 @@ if ( ! $memcache_obj = memcache_connect($mcHost,$mcPort) ){
 	exit;
 }
 
+if ( isset($_GET['quiet']) ) {
+  $log->log("going silent", PEAR_LOG_DEBUG);
+  $quiet = true;
+}
+
 $allData = array();
 $counter = 0;
 
@@ -55,7 +60,7 @@ if ($handle = opendir($backupDir)) {
 
 $memcache_obj->set('fitbit-data', $allData);
 
-print "Saved $counter entries into memcache";
+if ( ! $quiet ) { print "Saved $counter entries into memcache"; }
 exit;
 
 ?>

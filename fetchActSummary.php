@@ -9,6 +9,11 @@ if ( isset($_GET['debug']) ) {
   $debug = true;
 }
 
+if ( isset($_GET['quiet']) ) {
+  $log->log("going silent", PEAR_LOG_DEBUG);
+  $quiet = true;
+}
+
 // Which day to fetch the data for?
 if ( isset($_GET['dayToFetch']) && $_GET['dayToFetch'] != "" ) {
 
@@ -61,7 +66,7 @@ if ( file_put_contents($fileName, $json) == false ) {
 
 $response = json_decode($json);
 
-print "saving to $fileName";
+if ( ! $quiet ) { print "saving to $fileName"; }
 
 if ( $debug ) {
 ?>
