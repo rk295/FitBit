@@ -20,7 +20,7 @@ on your server. Hopefully if everything worked out that page should now
 display the secret and the tokent you need to use these pages to access
 your data.
 
-fetchAct.php
+fetchActSummary.php
 ------------
 
 Hit this page and it will default to getting yesterdays data and storing 
