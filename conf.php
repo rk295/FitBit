@@ -1,7 +1,7 @@
 <?php
 include('Log.php');
 
-$baseUrl = 'http://api.fitbit.com';
+$baseUrl = 'https://api.fitbit.com';
 
 // Get these from dev.fitbit when you register
 // your app with fit bit
